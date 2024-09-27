@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from todo import views
+from todo.views import TodoViewSet
 
 router = routers.DefaultRouter()
-router.register(r'todos', views.TodoViewSet)
+router.register(r'todos', TodoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
